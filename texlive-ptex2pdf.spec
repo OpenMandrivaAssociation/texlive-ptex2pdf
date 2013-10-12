@@ -6,7 +6,7 @@
 # catalog-version 0.4
 Name:		texlive-ptex2pdf
 Version:	0.4
-Release:	1
+Release:	2
 Summary:	Convert Japanese TeX documents to PDF
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/japanese/ptex2pdf
@@ -17,7 +17,7 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Requires:	texlive-ptex2pdf.bin
+Provides:	texlive-ptex2pdf.bin = %{EVRD}
 
 %description
 The Lua script provides system-independent support of Japanese
@@ -36,6 +36,7 @@ uplatex) followed by dvipdfmx.
 
 #-----------------------------------------------------------------------
 %files
+%{_bindir}/ptex2pdf
 %{_texmfdistdir}/scripts/ptex2pdf/ptex2pdf.lua
 %doc %{_texmfdistdir}/doc/latex/ptex2pdf/COPYING
 %doc %{_texmfdistdir}/doc/latex/ptex2pdf/README
@@ -47,5 +48,9 @@ uplatex) followed by dvipdfmx.
 %build
 
 %install
+mkdir -p %{buildroot}%{_bindir}
+pushd %{buildroot}%{_bindir}
+    ln -sf %{_texmfdistdir}/scripts/ptex2pdf/ptex2pdf.lua ptex2pdf
+popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
