@@ -6,7 +6,7 @@
 # catalog-version 0.4
 Name:		texlive-ptex2pdf
 Version:	0.4
-Release:	2
+Release:	3
 Summary:	Convert Japanese TeX documents to PDF
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/japanese/ptex2pdf
