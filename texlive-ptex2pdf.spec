@@ -1,12 +1,6 @@
-# revision 30321
-# category Package
-# catalog-ctan /language/japanese/ptex2pdf
-# catalog-date 2013-05-07 20:01:57 +0200
-# catalog-license gpl2
-# catalog-version 0.4
 Name:		texlive-ptex2pdf
-Version:	0.4
-Release:	10
+Version:	20170622.0
+Release:	1
 Summary:	Convert Japanese TeX documents to PDF
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/japanese/ptex2pdf
@@ -37,9 +31,8 @@ uplatex) followed by dvipdfmx.
 #-----------------------------------------------------------------------
 %files
 %{_bindir}/ptex2pdf
-%{_texmfdistdir}/scripts/ptex2pdf/ptex2pdf.lua
-%doc %{_texmfdistdir}/doc/latex/ptex2pdf/COPYING
-%doc %{_texmfdistdir}/doc/latex/ptex2pdf/README
+%{_texmfdistdir}/scripts/ptex2pdf
+%doc %{_texmfdistdir}/doc/latex/ptex2pdf
 
 #-----------------------------------------------------------------------
 %prep
