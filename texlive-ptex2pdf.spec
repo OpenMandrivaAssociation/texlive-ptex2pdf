@@ -1,5 +1,5 @@
 Name:		texlive-ptex2pdf
-Version:	20170622.0
+Version:	20180514.0
 Release:	1
 Summary:	Convert Japanese TeX documents to PDF
 Group:		Publishing
