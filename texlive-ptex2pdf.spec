@@ -1,6 +1,6 @@
 Name:		texlive-ptex2pdf
-Version:	64072
-Release:	2
+Version:	65953
+Release:	1
 Summary:	Convert Japanese TeX documents to PDF
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/japanese/ptex2pdf
