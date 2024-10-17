@@ -3,7 +3,7 @@ Version:	65953
 Release:	1
 Summary:	Convert Japanese TeX documents to PDF
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/language/japanese/ptex2pdf
+URL:		https://www.ctan.org/tex-archive/language/japanese/ptex2pdf
 License:	GPL2
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ptex2pdf.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ptex2pdf.doc.r%{version}.tar.xz
