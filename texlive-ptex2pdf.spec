@@ -1,49 +1,24 @@
-Name:		texlive-ptex2pdf
-Version:	65953
-Release:	1
+%global tl_name ptex2pdf
+%global tl_revision 65953
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	20200520.0
+Release:	%{tl_revision}.1
 Summary:	Convert Japanese TeX documents to PDF
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/language/japanese/ptex2pdf
-License:	GPL2
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ptex2pdf.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ptex2pdf.doc.r%{version}.tar.xz
+URL:		https://www.ctan.org/tex-archive/macros/jptex/generic/ptex2pdf
+License:	gpl2
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ptex2pdf.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ptex2pdf.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
-Provides:	texlive-ptex2pdf.bin = %{EVRD}
+BuildSystem:	texlive
+Requires:	texlive(ptex2pdf.bin)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
 The Lua script provides system-independent support of Japanese
-typesetting engines in TeXworks. As TeXworks typesetting setup
-does not allow for multistep processing, this script runs one
-of the ptex-based programs (ptex, uptex, eptex, platex,
-uplatex) followed by dvipdfmx.
+typesetting engines in TeXworks. As TeXworks typesetting setup does not
+allow for multistep processing, this script runs one of the ptex-based
+programs (ptex, uptex, eptex, platex, uplatex) followed by dvipdfmx.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_bindir}/ptex2pdf
-%{_texmfdistdir}/scripts/ptex2pdf
-%doc %{_texmfdistdir}/doc/latex/ptex2pdf
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_bindir}
-pushd %{buildroot}%{_bindir}
-ln -sf %{_texmfdistdir}/scripts/ptex2pdf/ptex2pdf.lua ptex2pdf
-popd
-mkdir -p %{buildroot}%{_datadir}
-cp -fpar texmf-dist %{buildroot}%{_datadir}
