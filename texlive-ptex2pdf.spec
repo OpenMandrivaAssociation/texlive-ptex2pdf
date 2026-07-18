@@ -1,5 +1,6 @@
 %global tl_name ptex2pdf
 %global tl_revision 65953
+%global tl_bin_links ptex2pdf:%{_texmfdistdir}/scripts/ptex2pdf/ptex2pdf.lua
 
 Name:		texlive-%{tl_name}
 Epoch:		1
@@ -15,6 +16,8 @@ BuildArch:	noarch
 BuildSystem:	texlive
 Requires:	texlive(ptex2pdf.bin)
 Provides:	texlive(%{tl_name}) = %{tl_revision}
+Provides:	texlive(%{tl_name}.bin) = %{tl_revision}
+Provides:	texlive-%{tl_name}.bin = %{EVRD}
 
 %description
 The Lua script provides system-independent support of Japanese
